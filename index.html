@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="temp.css">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>User</th>
+                <th>Link</th>
+            </tr>
+            <tr>
+                <td>User1</td>
+                <td><a href="form1.html">Link1</a></td>
+            </tr>
+            <tr>
+                <td>User2</td>
+                <td><a href="form2.html">Link2</a></td>
+            </tr>
+        </table>
+        <h1 id="vi">Header 1</h1>
+        <h1>Header 2</h1>
+        <h1>Header 3</h1>
+        <p>para</p>
+        <a href="form1.html" class="vijay">ancher</a>
+        
+        
+        <input type="hidden" value="123" />
+        <input type="number" placeholder="Enter the number" id="sum1">
+        <input type="number" placeholder="Enter the number" id="sum2">
+        <button onclick="addNumbers()">Submit</button>
+        <div id="result"></div>
+        
+
+        
+
+
+        <script>
+            function addNumbers(){
+
+            
+           const sum1=parseFloat(document.getElementById("sum1").value);
+           const sum2=parseFloat(document.getElementById("sum2").value);
+           const sum3=sum1+sum2;
+          
+           document.getElementById("result").textContent = `The sum is: ${sum3}`;
+            }
+            document.write("Hello, world!");
+
+           
+        </script>
+        
+
+    </body>
+</html>
