@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Resizing and Transparency Control</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
+        .wrapper {
+            display: grid;
+            place-items: center;
+            row-gap: 25px;
+        }
+        .resize-box {
+            position: relative;
+            border: 2px dotted #888;
+            resize: both;
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+        }
+        .resize-box img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+        .slider-control {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 15px;
+        }
+        .slider-control label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .slider-control input[type="range"] {
+            width: 250px;
+            background: linear-gradient(to right, #4CAF50, #2196F3);
+            height: 6px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        .slider-control input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            background-color: #ff5722;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .slider-control input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            background-color: #ff5722;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="resize-box">
+            <img id="dynamicImage" src="nature.jpg" alt="Nature Scene">
+        </div>
+
+        <div class="slider-control">
+            <label for="transparency">Transparency:</label>
+            <input id="transparency" type="range" min="0" max="1" step="0.05" value="1" 
+                   oninput="document.getElementById('dynamicImage').style.opacity = this.value">
+        </div>
+    </div>
+</body>
+</html>
