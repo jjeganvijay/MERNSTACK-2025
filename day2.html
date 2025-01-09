@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <h1>Login Form</h1>
+        
+        <style>
+            div{
+                height: 15px;
+                width: 15px;
+                padding: 200px;
+                margin: 0px 150px ;
+                border: 25px solid black;
+               
+
+            }
+            input{
+                margin: 0px -100;
+            }
+            h1
+            {
+               
+                margin: 40px 270px ;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div>
+        <input type="text" placeholder="Enter the user name" id="name"/><br><br>
+        <input type="text" placeholder="Enter the  PassWord" id="password"/><br><br>
+        <button onclick="aah()">Login </button>
+        <script>
+            function aah(){
+                var tags=document.getElementById("name");
+                var tags1=document.getElementById("password");
+                if(tags.value.trim() === "" ||  tags1.value.trim() === ""){
+                    alert("enter any value ");
+                }else{
+                    document.write("Name:"+tags.value+"<br>");
+                    document.write("PassWord:"+tags1.value);
+
+                }
+
+            }
+        </script>
+        </div>
+    </body>
+</html>
