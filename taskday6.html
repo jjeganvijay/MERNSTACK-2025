@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Component Naming and Default Exports</title>
+</head>
+<body>
+    <h1>Why Components Start with Capital Letters</h1>
+    <p>
+        In JavaScript frameworks like React, it's a best practice to use uppercase letters for naming components. This practice ensures that components are easily distinguishable from standard HTML tags.
+    </p>
+    <p>
+        - <strong>Component Naming Rules:</strong> When working with JSX (JavaScript XML), it's required that custom components use an uppercase first letter, such as <code>CustomComponent</code>. This allows React to recognize them as components, unlike native HTML tags like <code>&lt;div&gt;</code>, which are lowercase.
+    </p>
+    <p>
+        - <strong>The Reason for Capitalization:</strong> If a component is named using lowercase letters (e.g., <code>&lt;customcomponent&gt;</code>), React assumes it is a standard HTML tag, which can lead to unintended behavior when rendering.
+    </p>
+
+    <h1>The Purpose of Default Export</h1>
+    <p>
+        The <code>default</code> keyword in ES6 modules enables you to export a single main value or entity from a file, simplifying module usage.
+    </p>
+    <p>
+        - <strong>What Does Default Export Mean?</strong> Using <code>export default</code> signifies that the module has one primary export. For example, in React, you typically use default export to export a component as the primary entity.
+    </p>
+    <pre><code>export default CustomComponent;</code></pre>
+    <p>
+        - <strong>Advantages of Default Export:</strong> Default exports allow you to import the exported entity without needing to use its exact name, offering a cleaner and more flexible import syntax.
+    </p>
+    <pre><code>import CustomComponent from './CustomComponent';</code></pre>
+    <p>
+        This approach makes the import process easier, as you don't have to remember the original exported name precisely.
+    </p>
+</body>
+</html>
