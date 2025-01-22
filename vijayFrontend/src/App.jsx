@@ -1,46 +1,40 @@
-import { useState } from 'react';
+import { useState } from "react";
+import ClassCompEG  from './components/classComponents/ClassCompEG';
 import About from './components/functionalComponents/About';
+import Contact from './components/functionalComponents/Contact';
 import Gallery from './components/functionalComponents/Gallery';
 import Home from './components/functionalComponents/Home';
-import Contact from './components/functionalComponents/Contact';
 import Navbar from './components/functionalComponents/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Signup from './components/functionalComponents/Signup';
-import Login from './components/functionalComponents/Login';
+import Signup from './components/functionalComponents/signup';
+import UserState from './components/functionalComponents/Hooks/UseState';
+import UseEffect from './components/functionalComponents/Hooks/UseEffect';
+import Login from './components/functionalComponents/Login'; // Import Login
 
-function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const handleLogin = () => {
-    setIsAuthenticated(true);
-  };
-
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-  };
-
+ function App() {
   return (
+    <>
     <BrowserRouter>
-      {isAuthenticated && <Navbar onLogout={handleLogout} />}
+    <Navbar/>
+
       <Routes>
-        {!isAuthenticated ? (
-          <>
-            <Route path="/Signup" element={<Signup onLogin={handleLogin} />} />
-            <Route path="/" element={<Login onLogin={handleLogin} />} />
-          </>
-        ) : (
-          <>
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/gallery" element={<Gallery image="chocolate" page="gallery" />} />
-            <Route path="/contact" element={<Contact />} />
-            
-            
-          </>
-        )}
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/About" element={<About />}></Route>
+        <Route path="/Contact" element={<Contact />}></Route>
+        <Route path="/ClassCompEG" element={<ClassCompEG />}></Route>
+        <Route path="/Gallery" element={<Gallery/>}></Route>
+        <Route path="/use-state" element={<Contact />}></Route>
+        <Route path='/useEffect' element={<UseEffect />}></Route>
+        <Route path="/UseState" element={<UserState/>}></Route>
+        <Route path="/Signup" element={<Signup/>}></Route>
+        
+        
       </Routes>
-    </BrowserRouter>
-  );
+      </BrowserRouter>
+
+    </>
+)
 }
 
 export default App;

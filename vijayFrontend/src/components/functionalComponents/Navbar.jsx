@@ -1,44 +1,33 @@
-import { Link } from 'react-router-dom';
-import '../../css/Nabar.css';
-import { useState } from 'react';
-const Navbar = ({ onLogout }) => {
- 
-  const styling = {
-    textDecoration: 'underline',
-    color: 'blue',
-    listStyleType: 'none',
-    textAlign: 'center',
-  };
-
-  return (
-    <header>
-      <nav>
-        <ol style={styling}>
-          <li><Link className="link" to="/home">Home</Link></li>
-          <li><Link className="link" to="/about">About</Link></li>
-          <li><Link className="link" to="/gallery">Gallery</Link></li>
-          <li><Link className="link" to="/contact">Contact</Link></li>
-         
-        
-          <li><Link className="link" to="/Signup">Signup</Link></li>
-
-          <li>
-            <Link
-              className="link"
-              to="/"
-              onClick={() => {
-
-                onLogout();
-              }}
-            >
-              Logout
-            </Link>
-          </li>
-
-        </ol>
-      </nav>
-    </header>
-  );
-};
-
+import {Link} from 'react-router-dom'
+import "../../css/Nabar.css"
+import { useState } from 'react'
+const Navbar = () => {
+    var [dropdown,showDropdown] = useState(false)
+    const toggleDroupdown=()=>{
+        showDropdown(droupdown=>!droupdown);
+    }
+    return(
+        <header>
+        <nav>
+        <ul>
+            <li><Link class="link" to="/">Home</Link></li>
+            <li><Link class="link" to="/About">About</Link></li>
+            <li><Link class="link" to="/Contact">Contact</Link></li>
+            <li><Link class="link" to="/Gallery">Gallery</Link></li>
+            <div>
+                <span onMouseEnter={toggleDroupdown} >Hooks</span>
+               {dropdown && (<ol onMouseLeave={toggleDroupdown}>
+                    <li><Link to="/use-state" target='_blank'>userState</Link></li>
+                    <li>UseEffect</li>
+                </ol>)}
+            </div>
+            <li><Link class="link" to="/UseState">UseState</Link></li>
+            <li><Link class="link" to="/UseEffect">UseEffect</Link></li>
+            <li><Link class="link" to="/Signup">Signup</Link></li>
+            
+        </ul>
+        </nav>
+        </header>
+    )
+}
 export default Navbar;
