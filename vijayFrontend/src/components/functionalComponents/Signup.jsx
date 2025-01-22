@@ -1,26 +1,59 @@
-import "../../css/Signup.css";
-import {useNavigate, Link} from "react-router-dom";
+import React, { useState } from 'react';
 
-    
-    const Signup=(p)=>{
-        const navigate = useNavigate();
-        const handleSignup = (e) =>{
-          e.preventDefault();
-          p.onLogin();
-          navigate("/");
-        }
-      
-        return(
-            <div>
-                <form onSubmit={handleSignup}>
-                <h1>Welcome to Signup Page</h1>
-                <input type='text' id='text' placeholder='Enter your First Name' /><br/>
-                <input type='text' id='text' placeholder='Enter your Last Name' /><br/>
-                <input type='text' id='text' placeholder='Enter your Email Address' /><br/>
-                <input type='text' id='text'  placeholder='Confirm your Email Address' /><br/>
-                <input type='submit'></input>
-                </form>
-            </div>
-        )
+const Signup = () => {
+  const [isLogin, setIsLogin] = useState(true);
+  const [formData, setFormData] = useState({ username: '', password: '' }); 
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isLogin) {
+      console.log('Login:', formData);
+    } else {
+      console.log('Signup:', formData);
     }
-    export default Signup
+    setFormData({ username: '', password: '' });
+  };
+
+  return (
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <h2>{isLogin ? 'Login Page' : 'Signup Page'}</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>
+            Username:
+            <input
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={handleInputChange}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Password:
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+              required
+            />
+          </label>
+        </div>
+        <button type="submit">{isLogin ? 'Login' : 'Signup'}</button>
+      </form>
+      <button onClick={() => setIsLogin(!isLogin)}>
+        Switch to {isLogin ? 'Signup' : 'Login'}
+      </button>
+    </div>
+  );
+};
+
+export default Signup;

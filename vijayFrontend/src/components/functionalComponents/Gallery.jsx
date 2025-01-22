@@ -1,9 +1,9 @@
-const Gallery = (sece) => {
+const Gallery = (props) => {
     return(
         <div>
-            <h2>Welcome to {sece.page}Page</h2>
-            <img src="sece.jpg" alt="se.png"/>
-            <h2>This is about galllery{sece.image}</h2>
+            <h2>Welcome to {props.page}Page</h2>
+            <img src="sece.jpg" alt=""/>
+            <h2>This is about galllery{props.image}</h2>
             
         </div>
     )

@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import ClassCompEG  from './components/classComponents/ClassCompEG';
 import About from './components/functionalComponents/About';
 import Contact from './components/functionalComponents/Contact';
@@ -6,11 +6,11 @@ import Gallery from './components/functionalComponents/Gallery';
 import Home from './components/functionalComponents/Home';
 import Navbar from './components/functionalComponents/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Signup from './components/functionalComponents/signup';
+import Signup from './components/functionalComponents/Signup';
 import UserState from './components/functionalComponents/Hooks/UseState';
 import UseEffect from './components/functionalComponents/Hooks/UseEffect';
-import Login from './components/functionalComponents/Login'; // Import Login
 
+import UseEffectApi from "./components/functionalComponents/Hooks/UseEffectAPI";
 
  function App() {
   return (
@@ -27,6 +27,7 @@ import Login from './components/functionalComponents/Login'; // Import Login
         <Route path="/use-state" element={<Contact />}></Route>
         <Route path='/useEffect' element={<UseEffect />}></Route>
         <Route path="/UseState" element={<UserState/>}></Route>
+        <Route path="/UseEffectAPI" element={<UseEffectApi/>}></Route>
         <Route path="/Signup" element={<Signup/>}></Route>
         
         
