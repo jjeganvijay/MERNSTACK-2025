@@ -11,6 +11,7 @@ import UserState from './components/functionalComponents/Hooks/UseState';
 import UseEffect from './components/functionalComponents/Hooks/UseEffect';
 
 import UseEffectApi from "./components/functionalComponents/Hooks/UseEffectAPI";
+import UseEffectAPIimage from './components/functionalComponents/Hooks/UseEffectAPIimage';
 
  function App() {
   return (
@@ -28,6 +29,7 @@ import UseEffectApi from "./components/functionalComponents/Hooks/UseEffectAPI";
         <Route path='/useEffect' element={<UseEffect />}></Route>
         <Route path="/UseState" element={<UserState/>}></Route>
         <Route path="/UseEffectAPI" element={<UseEffectApi/>}></Route>
+        <Route path="/useimg" element={<UseEffectAPIimage/>}></Route>
         <Route path="/Signup" element={<Signup/>}></Route>
         
         
