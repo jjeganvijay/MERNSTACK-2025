@@ -12,6 +12,9 @@ import UseEffect from './components/functionalComponents/Hooks/UseEffect';
 
 import UseEffectApi from "./components/functionalComponents/Hooks/UseEffectAPI";
 import UseEffectAPIimage from './components/functionalComponents/Hooks/UseEffectAPIimage';
+import UseRef from './components/functionalComponents/Hooks/UseRef';
+import UseMemo from './components/functionalComponents/Hooks/UseMemo';
+import UseCallback from './components/functionalComponents/Hooks/UseCallback';
 
  function App() {
   return (
@@ -31,6 +34,9 @@ import UseEffectAPIimage from './components/functionalComponents/Hooks/UseEffect
         <Route path="/UseEffectAPI" element={<UseEffectApi/>}></Route>
         <Route path="/useimg" element={<UseEffectAPIimage/>}></Route>
         <Route path="/Signup" element={<Signup/>}></Route>
+        <Route path="/UseRef" element={<UseRef/>}></Route>
+        <Route path="/UseMemo" element={<UseMemo/>}></Route>
+        <Route path="/UseCallback" element={<UseCallback/>}></Route>
         
         
       </Routes>

@@ -18,13 +18,15 @@ const Navbar = () => {
                 <span onMouseEnter={toggleDroupdown} >Hooks</span>
                {dropdown && (<ol onMouseLeave={toggleDroupdown}>
                     <li><Link to="/use-state" target='_blank'>userState</Link></li>
-                    <li>UseEffect</li>
+                    <li><Link to="useEffect" target='_blank'>UseEffect</Link></li>
+                    <li><Link to="UseEffectAPI" target='_blank'>UseEffectAPI</Link></li>
+                    <li><Link to="/useimg" target="_blank">useAPIimg</Link></li>
+                    <li><Link to="UseRef" target='_blank'>UseRef</Link></li>
+                    <li><Link to="UseMemo" target='_blank'>UseMemo</Link></li>
+                    <li><Link to="UseCallback" target='_blank'>UseCallback</Link></li>
                 </ol>)}
             </div>
-            <li><Link class="link" to="/UseState">UseState</Link></li>
-            <li><Link class="link" to="/UseEffect">UseEffect</Link></li>
-            <li><Link class="link" to="/UseEffectAPI">UseEffectAPI</Link></li>
-            <li><Link to="/useimg" className="link">useAPIimg</Link></li>
+            
             <li><Link class="link" to="/Signup">Signup/login</Link></li>
             
         </ul>
