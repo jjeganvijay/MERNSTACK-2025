@@ -8,18 +8,19 @@ const UseCallback = () =>{
          color:dark?"white":"black"
     }
     var getItems =()=>{
-        return [num +1,num + 2, num+ 3]
+        return [num +1,num + 2, num +3]
     }
+    
     return (
         <div style={stying}><button onClick={()=>setDark(dark => !dark)}>Change Theme</button>
            
             <h2>Welcome to UseCallback Page.</h2>
             <input
             type="number" value={num} onChange={(e)=>{
-                setNum(e.target.value);
-            }}></input>
+                setNum(parseInt(e.target.value));
+            }} />
             
-          
+           <ListItems func={getItems} /> 
         </div>
     );
     };
