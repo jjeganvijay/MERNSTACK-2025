@@ -15,6 +15,8 @@ import UseEffectAPIimage from './components/functionalComponents/Hooks/UseEffect
 import UseRef from './components/functionalComponents/Hooks/UseRef';
 import UseMemo from './components/functionalComponents/Hooks/UseMemo';
 import UseCallback from './components/functionalComponents/Hooks/UseCallback';
+import ReactLifecycleMethods from './components/classComponents/ReactLifecycleMethods';
+import UseContext from './components/functionalComponents/Hooks/UseContext';
 
  function App() {
   return (
@@ -26,6 +28,9 @@ import UseCallback from './components/functionalComponents/Hooks/UseCallback';
         <Route path="/" element={<Home />}></Route>
         <Route path="/About" element={<About />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
+        <Route path="/react-lifecycle-methods" element={<ReactLifecycleMethods
+        />}></Route>
+        
         <Route path="/ClassCompEG" element={<ClassCompEG />}></Route>
         <Route path="/Gallery" element={<Gallery/>}></Route>
         <Route path="/use-state" element={<Contact />}></Route>
@@ -36,7 +41,10 @@ import UseCallback from './components/functionalComponents/Hooks/UseCallback';
         <Route path="/Signup" element={<Signup/>}></Route>
         <Route path="/UseRef" element={<UseRef/>}></Route>
         <Route path="/UseMemo" element={<UseMemo/>}></Route>
-        <Route path="/UseCallback" element={<UseCallback/>}></Route>
+        <Route path="/UseContext" element={<UseContext
+        />}></Route>
+        <Route path="/UseCallback" element={<UseCallback
+        />}></Route>
         
         
       </Routes>
