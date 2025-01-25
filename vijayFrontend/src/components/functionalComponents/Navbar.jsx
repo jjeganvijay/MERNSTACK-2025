@@ -29,7 +29,13 @@ const Navbar = () => {
                     <li><Link to="/function-class" className="Link" >FunctionInsideClass</Link></li>
                 </ol>)}
             </div>
-            <li><Link class="link" to="/memo">React.Memo</Link></li>
+            <div>
+                <span onMouseEnter={toggleDroupdown} >Memoization</span>
+               {dropdown && (<ol onMouseLeave={toggleDroupdown}>
+                    <li><Link to="/memo" class="link">React.memo</Link></li>
+                </ol>)}
+            </div>
+
             <li><Link class="link" to="/Signup">Signup/login</Link></li>
             
         </ul>
