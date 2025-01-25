@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Signup from './components/functionalComponents/Signup';
 import UserState from './components/functionalComponents/Hooks/UseState';
 import UseEffect from './components/functionalComponents/Hooks/UseEffect';
-
+import FunctionInsideClass from "./components/classComponents/FunctionInsideClass";
 import UseEffectApi from "./components/functionalComponents/Hooks/UseEffectAPI";
 import UseEffectAPIimage from './components/functionalComponents/Hooks/UseEffectAPIimage';
 import UseRef from './components/functionalComponents/Hooks/UseRef';
@@ -31,7 +31,7 @@ import Memo from './components/functionalComponents/Memoization/Memo';
         <Route path="/Contact" element={<Contact />}></Route>
         <Route path="/react-lifecycle-methods" element={<ReactLifecycleMethods
         />}></Route>
-        
+         <Route path="/function-class" element={<FunctionInsideClass />} />
         <Route path="/ClassCompEG" element={<ClassCompEG />}></Route>
         <Route path="/Gallery" element={<Gallery/>}></Route>
         <Route path="/use-state" element={<Contact />}></Route>

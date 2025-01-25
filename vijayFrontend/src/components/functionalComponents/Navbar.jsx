@@ -26,6 +26,7 @@ const Navbar = () => {
                     <li><Link to="UseMemo" target='_blank'>UseMemo</Link></li>
                     <li><Link to="UseCallback" target='_blank'>UseCallback</Link></li>
                     <li><Link to="Student" target='_blank'>UseContext</Link></li>
+                    <li><Link to="/function-class" className="Link" >FunctionInsideClass</Link></li>
                 </ol>)}
             </div>
             <li><Link class="link" to="/memo">React.Memo</Link></li>
