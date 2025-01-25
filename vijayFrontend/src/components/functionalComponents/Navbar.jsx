@@ -6,6 +6,10 @@ const Navbar = () => {
     const toggleDroupdown=()=>{
         showDropdown(droupdown=>!droupdown);
     }
+    var [dropdown1, showDropdown1] = useState(false);
+    const toggleDropdown1 = () => {
+      showDropdown1((dropdown1) => !dropdown1);
+    };
     return(
         <header>
         <nav>
@@ -33,6 +37,7 @@ const Navbar = () => {
                 <span onMouseEnter={toggleDroupdown} >Memoization</span>
                {dropdown && (<ol onMouseLeave={toggleDroupdown}>
                     <li><Link to="/memo" class="link">React.memo</Link></li>
+                    <li><Link to="/lazy" class="link">LazyAndSuspense</Link></li>
                 </ol>)}
             </div>
 

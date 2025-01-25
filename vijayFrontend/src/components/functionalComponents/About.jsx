@@ -1,20 +1,19 @@
 import { useState } from "react";
-
-
-{/* EVENT HANDLING */}
+// Event Handling
 const About = () => {
-    var [text,setText]=useState("vijay");
-    function handletext(e){
-        setText(e.target.value)
-    }
-    return(
-        <div>
-            <h2>This is about components</h2>
-            <h3>Textarea</h3>
-            {/* <textarea value={text} onChange={(event)=>setText(event.target.value)}/>*/}
-            <textarea value={text} onChange={handletext}/>
-            <p>The text is {text}</p>
-        </div>
-    )
-}
+  var [text, setText] = useState("Vijay");
+  var [text, setText] = useState("");
+  function handleText(e){
+    setText(e.target.value)
+  }
+  return (
+    <div>
+      <h2>This is About Component.</h2>
+      <h2>TextArea:</h2>
+{/* <textarea value={text} onChange={(event=>setText(event.target.value)} /> */}
+      <textarea value={text} onChange={handleText} />
+      <p>The text is {text}</p>
+    </div>
+  );
+};
 export default About;
