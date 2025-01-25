@@ -16,7 +16,8 @@ import UseRef from './components/functionalComponents/Hooks/UseRef';
 import UseMemo from './components/functionalComponents/Hooks/UseMemo';
 import UseCallback from './components/functionalComponents/Hooks/UseCallback';
 import ReactLifecycleMethods from './components/classComponents/ReactLifecycleMethods';
-import UseContext from './components/functionalComponents/Hooks/UseContext';
+import Student from './components/functionalComponents/Hooks/UseContext';
+import Memo from './components/functionalComponents/Memoization/Memo';
 
  function App() {
   return (
@@ -40,8 +41,9 @@ import UseContext from './components/functionalComponents/Hooks/UseContext';
         <Route path="/useimg" element={<UseEffectAPIimage/>}></Route>
         <Route path="/Signup" element={<Signup/>}></Route>
         <Route path="/UseRef" element={<UseRef/>}></Route>
+        <Route path="/memo" element={<Memo/>}></Route>
         <Route path="/UseMemo" element={<UseMemo/>}></Route>
-        <Route path="/UseContext" element={<UseContext
+        <Route path="/Student" element={<Student
         />}></Route>
         <Route path="/UseCallback" element={<UseCallback
         />}></Route>

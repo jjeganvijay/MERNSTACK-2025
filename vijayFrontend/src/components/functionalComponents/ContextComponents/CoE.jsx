@@ -1,7 +1,11 @@
+import ExamResults from "./ExamResults";
+
 const CoE = ()=>{
     return(
         <div>
-            <h3>Mark publishing is in process .</h3>
+            <h4>Paper Correctcion Done</h4>
+            <h3>Mark published .</h3>
+            <ExamResults />
         </div>
     )
 }
