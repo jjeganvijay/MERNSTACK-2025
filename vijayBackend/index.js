@@ -2,65 +2,55 @@ const express = require("express");
 const path = require("path");
 const mdb = require("mongoose");
 const dotenv = require("dotenv");
-const app = express();
-dotenv.config();
 const Signup = require("./models/signupSchema");
+const bcrypt = require("bcrypt");
+const cors=require('cors');
+
+dotenv.config();
+const app = express();
+
+app.use(cors())
 
 app.use(express.json());
 
-
 mdb
-  .connect(process.env.MONGODB_URL)
+  .connect("mongodb+srv://test:test@test.aoiwt.mongodb.net/")
   .then(() => {
-    console.log("MongoDB Connection Successful");
+    console.log("MongoDB Connection Sucessfull");
   })
   .catch((err) => {
-    console.log("MongoDB connection unsuccessful", err);
+    console.log("MongoDB Connection Unsucessfull", err);
   });
-
 
 app.get("/", (req, res) => {
   res.send(
-    "Welcome to Backend friends\nYour RollerCoaster starts from now on\nFasten your codabase so you can catch up with what is being taught"
+    "Welcome to Backend my friend\n Your RollerCoster starts from now on\n Fasten your codabase so you can catchup of what is been taught"
   );
 });
-
-
 app.get("/static", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
-
-
-app.post("/signup", (req, res) => {
-  var { firstName, lastName, userName, email, password } = req.body;
+//signup
+app.post("/signup", async (req, res) => {
+  var { firstName, lastName, username, email, password } = req.body;
+  var hashedpassword = await bcrypt.hash(password, 10);
+  console.log(hashedpassword);
   try {
     console.log("Inside try");
     const newCustomer = new Signup({
       firstName: firstName,
       lastName: lastName,
-      userName: userName,
+      username: username,
       email: email,
-      password: password,
+      password: hashedpassword,
     });
-    console.log(newCustomer);
     newCustomer.save();
-    res.status(201).send("Signup successful");
+    res.status(201).send("signup successfull");
   } catch (err) {
-    res.status(400).send("Signup Unsuccessful", err);
+    res.status(400).send("Signup Unsuccessfull", err);
   }
 });
-
-
-app.get("/getsignupdet", async (req, res) => {
-  try {
-    const signUpdet = await Signup.find();
-    res.status(200).json(signUpdet);
-  } catch (err) {
-    res.status(500).send("Error fetching signup details");
-  }
-});
-
-
+// login
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -78,21 +68,23 @@ app.post("/login", async (req, res) => {
   }
 });
 
-
-app.put("/updateuser", async (req, res) => {
-  const { id, ...updates } = req.body;
-  try {
-    const updateUser = await Signup.findByIdAndUpdate(id, updates, { new: true });
-    if (!updateUser) {
-      return res.status(404).send("User not found");
-    }
-    res.status(200).send("User details update successful");
-  } catch (err) {
-    res.status(500).send("Error updating user details");
-  }
+// get Signup details route
+app.get("/getsignupdet", async (req, res) => {
+  var signUpdet = await Signup.find();
+  res.status(200).json(signUpdet);
+});
+//update user details
+app.post("/updatedet", async (req, res) => {
+  var updateRec = await Signup.findOneAndUpdate(
+    { username: "angunisha" },
+    { $set: { username: "angu3110" } }
+  );
+  console.log(updateRec);
+  updateRec.save();
+  res.json("Record Updated");
 });
 
-
+// Delete user
 app.delete("/deleteuser", async (req, res) => {
   const { id } = req.body;
   try {
@@ -100,12 +92,12 @@ app.delete("/deleteuser", async (req, res) => {
     if (!deleteUser) {
       return res.status(404).send("User not found");
     }
-    res.status(200).send("User deleted successfully");
+    res.status(200).send("User deleted successdull");
   } catch (err) {
     res.status(500).send("Error deleting user");
   }
 });
 
-app.listen(3001, () => {
-  console.log("Server connected");
+app.listen(3000, () => {
+  console.log("Server Started");
 });
